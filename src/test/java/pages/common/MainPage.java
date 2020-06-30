@@ -15,11 +15,12 @@ public class MainPage extends AbstractPage
     @FindBy(id = "membership-login-link")
     public WebElement loginButton;
 
-    @FindBy(linkText = "Bebek, Oyuncak")
-    public WebElement babyToyMenu;
+    @FindBy(linkText = "Meyve, Sebze")
+    public WebElement fruitAndVegetablesMenu;
 
-    @FindBy(css = "a[data-monitor-ga-action='Bebek Bezi']")
-    public WebElement diaperCategory;
+    @FindBy(css = "a[data-monitor-ga-action='Meyve']")
+    public WebElement fruitCategory;
+
 
     @FindBy(xpath = "//span[@data-request-param='912']")
     public WebElement diaperCheckBox;

@@ -19,30 +19,43 @@ public class CategoryPage extends AbstractPage
     @FindBy(className = "cookie-popup-dismiss")
     public WebElement cookieDismissButton;
 
+    @FindBy(css = "a[data-monitor-ga-action='Kabuklu Kuruyemiş']")
+    public WebElement nutsSubCategory;
+
     @FindBy(css = ".sub-category-product-list .list:nth-of-type(1) .product-card-button")
-    public WebElement addBasket;
+    public WebElement addFirstItemToBasket;
+
+    @FindBy(css = ".sub-category-product-list .list:nth-of-type(2) .product-card-button")
+    public WebElement addSecondItemToBasket;
+
+    @FindBy(linkText = "Çok Satanlar")
+    public WebElement showSortItemsLink;
 
     @FindBy(linkText = "Önce En Yüksek Fiyat")
     public WebElement sortItemsLink;
 
-    @FindBy(xpath = "//a[@data-monitor-position='1']")
-    public WebElement firstListedItem;
+    @FindBy(css = ".product-card-basket-process .product-card-bottom .product-card-bottom--arid .add-product .action .part.product-plus")
+    public WebElement changeAmountButton;
 
-    @FindBy(xpath = "//a[@data-monitor-position='4']")
-    public WebElement fourthListedItem;
+    @FindBy(className = "header-cart")
+    public WebElement cartButton;
+
+    @FindBy(className = "delete-product")
+    public WebElement deleteProductButton;
+
+    @FindBy(className = "go-to-basket-button")
+    public WebElement goToBasketButton;
 
     @FindBy(id = "product-search")
     public WebElement productSearchBar;
 
-    @FindBy(className = "empty-search-message")
-    public WebElement emptySearchWarning;
-
-    @FindAll({@FindBy(how = How.CLASS_NAME,using = "brands-list-anchor")})
+    @FindAll({@FindBy(className = "brands-list-anchor")})
     public List<WebElement> brandList;
 
-    @FindAll({@FindBy(className = "product-link")})
-    public List<WebElement> items;
+    @FindBy(css = "#deliveryFromStoreAnnouncement button")
+    public WebElement announcementCloseButton;
 
-    @FindBy(className = "like-heart")
-    public WebElement addFavoritesBtn;
+    @FindBy(id = "wis-cancel")
+    public WebElement feedbackCloseButton;
+
 }

@@ -133,6 +133,7 @@ public class OrderTest extends AbstractTest
 
         // Select Delivery Time and Delivery Type
         browser.waitAndClick(basketPage.contactlessButton);
+        browser.findElements(By.className("iCheck-helper")).get(2).click();
         browser.waitAndClick(basketPage.confirmTimeButton);
 
         // Select Payment Type

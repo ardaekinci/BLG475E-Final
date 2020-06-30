@@ -34,8 +34,8 @@ public class CategoryPage extends AbstractPage
     @FindBy(linkText = "Önce En Yüksek Fiyat")
     public WebElement sortItemsLink;
 
-    @FindBy(css = ".product-card-basket-process .product-card-bottom .product-card-bottom--arid .add-product .action .part.product-plus")
-    public WebElement changeAmountButton;
+    @FindAll({@FindBy(css = ".product-card-basket-process .product-card-bottom .product-card-bottom--arid .add-product .action .part.product-plus")})
+    public List<WebElement> changeAmountButton;
 
     @FindBy(className = "header-cart")
     public WebElement cartButton;

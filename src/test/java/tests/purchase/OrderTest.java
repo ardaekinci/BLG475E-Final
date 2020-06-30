@@ -25,7 +25,7 @@ public class OrderTest extends AbstractTest
         return null;
     }
 
-    private LoginPage loginWithNumber(Browser browser, String number){
+    private void loginWithNumber(Browser browser, String number){
         MainPage mainPage = new MainPage(browser);
         mainPage.loginButton.click();
 
@@ -33,7 +33,12 @@ public class OrderTest extends AbstractTest
         if (number != null)
             browser.waitAndSendKeys(loginPage.phoneNumberInputBar, number);
         loginPage.loginButton.click();
-        return loginPage;
+    }
+
+    private void clickButton(Browser browser, WebElement button, int times){
+        for (int i = 0; i < times; i++){
+            browser.waitAndClick(button);
+        }
     }
 
     @Test
@@ -91,14 +96,11 @@ public class OrderTest extends AbstractTest
         // Add First Items To Basket
         browser.waitAndClick(categoryPage.addFirstItemToBasket);
 
-        // Change Amount of Added Item
-        browser.waitAndClick(categoryPage.changeAmountButton);
-        browser.waitAndClick(categoryPage.changeAmountButton);
-        browser.waitAndClick(categoryPage.changeAmountButton);
-        browser.waitAndClick(categoryPage.changeAmountButton);
-        browser.waitAndClick(categoryPage.changeAmountButton);
-        browser.waitAndClick(categoryPage.changeAmountButton);
-        browser.waitAndClick(categoryPage.changeAmountButton);
+        // Change Amount of Added Items
+        WebElement itemOne = categoryPage.changeAmountButton.get(0);
+        WebElement itemTwo = categoryPage.changeAmountButton.get(1);
+        clickButton(browser, itemOne, 7);
+        clickButton(browser, itemTwo, 4);
 
         // Remove Second Item
         browser.waitAndClick(categoryPage.cartButton);

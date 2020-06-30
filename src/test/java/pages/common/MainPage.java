@@ -21,19 +21,12 @@ public class MainPage extends AbstractPage
     @FindBy(css = "a[data-monitor-ga-action='Meyve']")
     public WebElement fruitCategory;
 
-
-    @FindBy(xpath = "//span[@data-request-param='912']")
-    public WebElement diaperCheckBox;
-
-    @FindBy(xpath = "//span[@data-request-param='216']")
-    public WebElement diaperSizeFourCheckBox;
-
     @FindBy(id = "brands_search")
     public WebElement brandSearchInput;
 
-    @FindBy(className = "ui-autocomplete-input")
-    public WebElement mainSearchBar;
+    @FindBy(css = ".shoping-cart-icon-block .fa-shopping-cart")
+    public WebElement shoppingBasketButton;
 
-    @FindBy(className = "ui-menu-item")
-    public WebElement searchMenuResult;
+    @FindBy(className = "rubbish")
+    public WebElement trashButton;
 }

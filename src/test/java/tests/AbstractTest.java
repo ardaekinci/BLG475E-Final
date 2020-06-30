@@ -8,6 +8,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import pages.common.MainPage;
 import utils.Browser;
 import utils.TestContext;
 
@@ -30,4 +31,16 @@ public class AbstractTest
             browser.quit();
     }
 
+    public void clearBasket(Browser browser)
+    {
+        MainPage mainPage = new MainPage(browser);
+        browser.waitAndClick(mainPage.shoppingBasketButton);
+
+        while (mainPage.trashButton.isDisplayed())
+        {
+            browser.waitAndClick(mainPage.trashButton);
+        }
+
+        browser.waitAndClick(mainPage.shoppingBasketButton);
+    }
 }
